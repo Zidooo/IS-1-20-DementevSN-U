@@ -104,6 +104,12 @@
     <Compile Include="zadanie2.Designer.cs">
       <DependentUpon>zadanie2.cs</DependentUpon>
     </Compile>
+    <Compile Include="zadanie3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="zadanie3.Designer.cs">
+      <DependentUpon>zadanie3.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -121,6 +127,9 @@
     </Compile>
     <EmbeddedResource Include="zadanie2.resx">
       <DependentUpon>zadanie2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="zadanie3.resx">
+      <DependentUpon>zadanie3.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
