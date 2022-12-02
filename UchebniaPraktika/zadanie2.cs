@@ -31,7 +31,7 @@ namespace UchebniaPraktika
             public string connStr;
             public string test()
             {
-                return connStr = $"host={host};port={port};user={user};database={bd};password={pass}";
+                return connStr = $"server={host};port={port};user={user};database={bd};password={pass}";
             }
         }
 

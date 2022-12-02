@@ -8,16 +8,6 @@ namespace UchebniaPraktika
 {
     internal static class Program
     {
-        /// <summary>
-        /// Главная точка входа для приложения.
-        /// </summary>
-        [STAThread]
-        static void Main()
-        {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new menu());
-        }
 
         public class Connection
         {
@@ -29,8 +19,20 @@ namespace UchebniaPraktika
             public string connStr;
             public string test()
             {
-                return connStr = $"host={host};port={port};user={user};database={bd};password={pass}";
+                return connStr = $"server={host};port={port};user={user};database={bd};password={pass}";
             }
+        }
+
+
+        /// <summary>
+        /// Главная точка входа для приложения.
+        /// </summary>
+        [STAThread]
+        static void Main()
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new menu());
         }
     }
 }

@@ -16,26 +16,26 @@ namespace UchebniaPraktika
         MySqlConnection conn;
         Connection mysql;
 
-
         public zadanie3()
         {
             InitializeComponent();
-            datagridload();
         }
 
 
-        private void datagridload()
+        private void zadanie3_Load(object sender, EventArgs e)
         {
+            //подключение
+            mysql = new Connection();
+            mysql.test();
+            conn = new MySqlConnection(mysql.connStr);
+        }
 
-            MySqlCommand command = new MySqlCommand();
-            string commandString = "SELECT * FROM employees;";
-            command.CommandText = commandString;
-            command.Connection = conn;
-            MySqlDataReader reader;
+        private void button1_Click(object sender, EventArgs e)
+        {
             try
             {
-                command.Connection.Open();
-                reader = command.ExecuteReader();
+                conn.Open();
+                string sql = $"SELECT * FROM employees";
                 dataGridView1.Columns.Add("id_employees", "ID Сотрудника");
                 dataGridView1.Columns["id_employees"].Width = 100;
                 dataGridView1.Columns.Add("FIO", "ФИО");
@@ -52,6 +52,8 @@ namespace UchebniaPraktika
                 dataGridView1.Columns["email"].Width = 175;
                 dataGridView1.Columns.Add("phone", "Номер телефона");
                 dataGridView1.Columns["phone"].Width = 104;
+                MySqlCommand command = new MySqlCommand(sql, conn);
+                MySqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
                     dataGridView1.Rows.Add(reader["id_employees"].ToString(), reader["FIO"].ToString(), reader["number_pass"].ToString(), reader["salary"].ToString(), reader["address"].ToString(), reader["job_title"].ToString(), reader["email"].ToString(), reader["phone"].ToString());
@@ -64,16 +66,8 @@ namespace UchebniaPraktika
             }
             finally
             {
-                command.Connection.Close();
+                conn.Close();
             }
-        }
-
-
-        private void zadanie3_Load(object sender, EventArgs e)
-        {
-            mysql = new Connection();
-            mysql.test();
-            conn = new MySqlConnection(mysql.connStr);
         }
     }
 }
