@@ -34,5 +34,11 @@ namespace UchebniaPraktika
             zadanie3 z3 = new zadanie3();
             z3.ShowDialog();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            zadanie4 z4 = new zadanie4();
+            z4.ShowDialog();
+        }
     }
 }
