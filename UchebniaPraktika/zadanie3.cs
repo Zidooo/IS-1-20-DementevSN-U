@@ -35,28 +35,32 @@ namespace UchebniaPraktika
             try
             {
                 conn.Open();
-                string sql = $"SELECT * FROM employees";
-                dataGridView1.Columns.Add("id_employees", "ID Сотрудника");
-                dataGridView1.Columns["id_employees"].Width = 100;
-                dataGridView1.Columns.Add("FIO", "ФИО");
-                dataGridView1.Columns["FIO"].Width = 185;
-                dataGridView1.Columns.Add("number_pass", "Номер паспорта");
-                dataGridView1.Columns["number_pass"].Width = 105;
-                dataGridView1.Columns.Add("salary", "Зарплата");
-                dataGridView1.Columns["salary"].Width = 100;
-                dataGridView1.Columns.Add("address", "Адресс");
-                dataGridView1.Columns["address"].Width = 130;
-                dataGridView1.Columns.Add("job_title", "Должность");
-                dataGridView1.Columns["job_title"].Width = 104;
-                dataGridView1.Columns.Add("email", "Email");
-                dataGridView1.Columns["email"].Width = 175;
+                string sql = $"SELECT who_ordered, phone, addres_who_ordered, fio_ordered, name_services, car, sum, datatime, id_order, id_clients FROM clients INNER JOIN orders ON id_clients = id_order ORDER BY id_clients;";
+                dataGridView1.Columns.Add("id_clients", "ID Клиента");
+                dataGridView1.Columns["id_clients"].Width = 100;
+                dataGridView1.Columns.Add("who_ordered", "Кто заказал");
+                dataGridView1.Columns["who_ordered"].Width = 185;
                 dataGridView1.Columns.Add("phone", "Номер телефона");
-                dataGridView1.Columns["phone"].Width = 104;
+                dataGridView1.Columns["phone"].Width = 105;
+                dataGridView1.Columns.Add("addres_who_ordered", "адресс заказа");
+                dataGridView1.Columns["addres_who_ordered"].Width = 100;
+                dataGridView1.Columns.Add("fio_ordered", "ФИО заказчика");
+                dataGridView1.Columns["fio_ordered"].Width = 130;
+                dataGridView1.Columns.Add("name_services", "Название услуги");
+                dataGridView1.Columns["name_services"].Width = 104;
+                dataGridView1.Columns.Add("car", "Машина для заказа");
+                dataGridView1.Columns["car"].Width = 175;
+                dataGridView1.Columns.Add("sum", "Сумма заказа");
+                dataGridView1.Columns["sum"].Width = 104;
+                dataGridView1.Columns.Add("datatime", "Время заказа");
+                dataGridView1.Columns["datatime"].Width = 104;
                 MySqlCommand command = new MySqlCommand(sql, conn);
                 MySqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    dataGridView1.Rows.Add(reader["id_employees"].ToString(), reader["FIO"].ToString(), reader["number_pass"].ToString(), reader["salary"].ToString(), reader["address"].ToString(), reader["job_title"].ToString(), reader["email"].ToString(), reader["phone"].ToString());
+                    dataGridView1.Rows.Add(reader["id_clients"].ToString(), reader["who_ordered"].ToString(), reader["phone"].ToString(), reader["addres_who_ordered"].ToString(), 
+                    reader["fio_ordered"].ToString(), reader["name_services"].ToString(), reader["car"].ToString(), reader["sum"].ToString(), reader["datatime"].ToString());
+
                 }
                 reader.Close();
             }
@@ -67,6 +71,21 @@ namespace UchebniaPraktika
             finally
             {
                 conn.Close();
+            }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+                {
+                    MessageBox.Show(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Нужно выбрать именно запись в datagrid");
             }
         }
     }
