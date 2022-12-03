@@ -10,7 +10,8 @@ namespace UchebniaPraktika
     {
         public class Connection
         {
-            public string host = "10.90.12.110";
+            //public string host = "10.90.12.110";
+            public string host = "chuc.caseum.ru";
             public string port = "33333";
             public string user = "st_1_20_11";
             public string bd = "is_1_20_st11_KURS";

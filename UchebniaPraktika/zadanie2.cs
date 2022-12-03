@@ -17,11 +17,12 @@ namespace UchebniaPraktika
         {
             InitializeComponent();
         }
-
+        //Переменная соединения
         public MySqlConnection conn;
+        //глобальное обьвление класса подключение
         Connection mysql;
 
-        class Connection
+        class Connection //класс подключения
         {
             string host = "10.90.12.110";
             string port = "33333";
@@ -29,7 +30,7 @@ namespace UchebniaPraktika
             string bd = "uchebka";
             string pass = "uchebka";
             public string connStr;
-            public string test()
+            public string test() //метод который возвращает строку подключения
             {
                 return connStr = $"server={host};port={port};user={user};database={bd};password={pass}";
             }
@@ -39,8 +40,9 @@ namespace UchebniaPraktika
         {
             try
             {
-                mysql = new Connection();
-                mysql.test();
+                //подключение
+                mysql = new Connection(); //Класс подключения
+                mysql.test();//вызывается метод возвращение строки подключения
                 conn = new MySqlConnection(mysql.connStr);
                 conn.Open();
                 MessageBox.Show("Ураааа, подключение успешно");
