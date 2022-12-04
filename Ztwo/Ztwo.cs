@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -9,11 +10,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
-namespace UchebniaPraktika
+namespace Ztwo
 {
-    public partial class zadanie2 : Form
+    public partial class Ztwo : Form
     {
-        public zadanie2()
+        public Ztwo()
         {
             InitializeComponent();
         }
@@ -24,7 +25,7 @@ namespace UchebniaPraktika
 
         class Connection //класс подключения
         {
-            string host = "10.90.12.110";
+            string host = "chuc.caseum.ru";
             string port = "33333";
             string user = "uchebka";
             string bd = "uchebka";
@@ -36,7 +37,7 @@ namespace UchebniaPraktika
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
             try
             {

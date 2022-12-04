@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{09DF1B3C-C4DF-4417-8809-F1BE90C79FF9}</ProjectGuid>
+    <ProjectGuid>{BD9C45FF-45E1-48CB-AEDA-3D35AE953588}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>UchebniaPraktika</RootNamespace>
-    <AssemblyName>UchebniaPraktika</AssemblyName>
+    <RootNamespace>Zfive</RootNamespace>
+    <AssemblyName>Zfive</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -84,16 +84,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="menu.cs">
+    <Compile Include="Zfive.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="menu.Designer.cs">
-      <DependentUpon>menu.cs</DependentUpon>
+    <Compile Include="Zfive.Designer.cs">
+      <DependentUpon>Zfive.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="menu.resx">
-      <DependentUpon>menu.cs</DependentUpon>
+    <EmbeddedResource Include="Zfive.resx">
+      <DependentUpon>Zfive.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -119,25 +119,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Zfive\Zfive.csproj">
-      <Project>{BD9C45FF-45E1-48CB-AEDA-3D35AE953588}</Project>
-      <Name>Zfive</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Zfour\Zfour.csproj">
-      <Project>{A6A36701-78A0-4E83-A9C6-5F5443639C85}</Project>
+      <Project>{a6a36701-78a0-4e83-a9c6-5f5443639c85}</Project>
       <Name>Zfour</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Zone\Zone.csproj">
-      <Project>{A5446D6D-E445-469E-B676-CBFD20A2AE26}</Project>
-      <Name>Zone</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Zthree\Zthree.csproj">
-      <Project>{1E73F86D-BDE8-4F01-AE43-338AF61BDA00}</Project>
-      <Name>Zthree</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Ztwo\Ztwo.csproj">
-      <Project>{958B5F64-5018-4BBC-AA6A-61D4C63916F0}</Project>
-      <Name>Ztwo</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

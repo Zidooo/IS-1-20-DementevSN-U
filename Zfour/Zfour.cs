@@ -8,13 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-using static UchebniaPraktika.SqlConnect;  //ссылка на библиотеку подключения 
+using static Zfour.SqlConnect; //ссылка на библиотеку подключения 
 
-namespace UchebniaPraktika
+namespace Zfour
 {
-    public partial class zadanie4 : Form
+    public partial class Zfour : Form
     {
-        public zadanie4()
+        public Zfour()
         {
             InitializeComponent();
         }
@@ -22,7 +22,7 @@ namespace UchebniaPraktika
         //Переменная соединения
         public MySqlConnection conn;
         //глобальное обьвление класса подключение
-        Connection mysql;
+        SqlConnect mysql;
 
         private void Datagrid()
         {
@@ -53,18 +53,16 @@ namespace UchebniaPraktika
             }
         }
 
-
-
-        private void zadanie4_Load(object sender, EventArgs e)
+        private void Zfour_Load(object sender, EventArgs e)
         {
             //подключение
-            mysql = new Connection();//Класс подключения
+            mysql = new SqlConnect();//Класс подключения
             mysql.test(); //вызывается метод возвращение строки подключения
             conn = new MySqlConnection(mysql.connStr);
             Datagrid(); //вызывается метод загрузки датагрида при запуске формы
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             conn.Open();
             int id = dataGridView1.SelectedCells[0].RowIndex + 1; // Переменная id берёт индекс строки и прибавляет 1

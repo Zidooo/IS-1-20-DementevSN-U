@@ -7,6 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Zfive;
+using Zfour;
+using Zone;
+using Zthree;
+using Ztwo;
 
 namespace UchebniaPraktika
 {
@@ -19,32 +24,32 @@ namespace UchebniaPraktika
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form1 f1 = new Form1();
-            f1.ShowDialog();
+            Zone.Zone z = new Zone.Zone();
+            z.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            zadanie2 z2 = new zadanie2();
-            z2.ShowDialog();
+            Ztwo.Ztwo z = new Ztwo.Ztwo();
+            z.ShowDialog();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            zadanie3 z3 = new zadanie3();
-            z3.ShowDialog();
+            Zthree.Zthree z = new Zthree.Zthree();
+            z.ShowDialog();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            zadanie4 z4 = new zadanie4();
-            z4.ShowDialog();
+            Zfour.Zfour z = new Zfour.Zfour();
+            z.ShowDialog();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            zadanie5 z5 = new zadanie5();
-            z5.ShowDialog();
+            Zfive.Zfive z = new Zfive.Zfive();
+            z.ShowDialog();
         }
     }
 }

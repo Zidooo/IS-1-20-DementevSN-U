@@ -1,17 +1,16 @@
-﻿
-namespace UchebniaPraktika
+﻿namespace Ztwo
 {
-    partial class zadanie2
+    partial class Ztwo
     {
         /// <summary>
-        /// Required designer variable.
+        /// Обязательная переменная конструктора.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        /// Clean up any resources being used.
+        /// Освободить все используемые ресурсы.
         /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        /// <param name="disposing">истинно, если управляемый ресурс должен быть удален; иначе ложно.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -21,11 +20,11 @@ namespace UchebniaPraktika
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Код, автоматически созданный конструктором форм Windows
 
         /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
+        /// Требуемый метод для поддержки конструктора — не изменяйте 
+        /// содержимое этого метода с помощью редактора кода.
         /// </summary>
         private void InitializeComponent()
         {
@@ -34,22 +33,22 @@ namespace UchebniaPraktika
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(222, 72);
+            this.button1.Location = new System.Drawing.Point(214, 82);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(317, 195);
-            this.button1.TabIndex = 0;
+            this.button1.TabIndex = 1;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // zadanie2
+            // Ztwo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button1);
-            this.Name = "zadanie2";
-            this.Text = "zadanie2";
+            this.Name = "Ztwo";
+            this.Text = "Form1";
             this.ResumeLayout(false);
 
         }
@@ -59,3 +58,4 @@ namespace UchebniaPraktika
         private System.Windows.Forms.Button button1;
     }
 }
+

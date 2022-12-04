@@ -8,31 +8,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-using static UchebniaPraktika.Program; //ссылка на класс подключения в program.cs
-namespace UchebniaPraktika
+using static Zthree.Program; //ссылка на класс подключения в program.cs
+
+namespace Zthree
 {
-    public partial class zadanie3 : Form
+    public partial class Zthree : Form
     {
         //Переменная соединения
         MySqlConnection conn;
         //глобальное обьвление класса подключение
         Connection mysql;
 
-        public zadanie3()
+        public Zthree()
         {
             InitializeComponent();
         }
 
 
-        private void zadanie3_Load(object sender, EventArgs e)
-        {
-            //подключение
-            mysql = new Connection();//Класс подключения
-            mysql.test(); //вызывается метод возвращение строки подключения
-            conn = new MySqlConnection(mysql.connStr);
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -60,7 +53,7 @@ namespace UchebniaPraktika
                 MySqlDataReader reader = command.ExecuteReader();
                 while (reader.Read()) //считываение данных из бд
                 {
-                    dataGridView1.Rows.Add(reader["id_clients"].ToString(), reader["who_ordered"].ToString(), reader["phone"].ToString(), reader["addres_who_ordered"].ToString(), 
+                    dataGridView1.Rows.Add(reader["id_clients"].ToString(), reader["who_ordered"].ToString(), reader["phone"].ToString(), reader["addres_who_ordered"].ToString(),
                     reader["fio_ordered"].ToString(), reader["name_services"].ToString(), reader["car"].ToString(), reader["sum"].ToString(), reader["datatime"].ToString());
 
                 }
@@ -76,7 +69,7 @@ namespace UchebniaPraktika
             }
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
@@ -89,6 +82,14 @@ namespace UchebniaPraktika
             {
                 MessageBox.Show("Нужно выбрать именно запись в datagrid");
             }
+        }
+
+        private void Zthree_Load_1(object sender, EventArgs e)
+        {
+            //подключение
+            mysql = new Connection();//Класс подключения
+            mysql.test(); //вызывается метод возвращение строки подключения
+            conn = new MySqlConnection(mysql.connStr);
         }
     }
 }

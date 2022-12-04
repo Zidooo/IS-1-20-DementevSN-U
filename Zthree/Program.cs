@@ -1,16 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
-namespace UchebniaPraktika
+namespace Zthree
 {
-    class SqlConnect
+    public class Program
     {
         public class Connection
         {
-            //public string host = "10.90.12.110";
             public string host = "chuc.caseum.ru";
             public string port = "33333";
             public string user = "st_1_20_11";
@@ -21,6 +20,17 @@ namespace UchebniaPraktika
             {
                 return connStr = $"server={host};port={port};user={user};database={bd};password={pass}";
             }
+        }
+
+        /// <summary>
+        /// Главная точка входа для приложения.
+        /// </summary>
+        [STAThread]
+        static void Main()
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Zthree());
         }
     }
 }
